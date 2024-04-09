@@ -3,11 +3,13 @@ const app = express();
 const mongoose = require('mongoose');
 const Product = require('./models/product.model');
 const productRoute= require('./routes/product.route');
+const auth= require('./routes/auth.routes.js');
 
 
 app.use(express.json());    
 app.use(express.urlencoded({extended: false}));
 
+app.use("/api/auth",auth);
 //routes
 app.use('/api/products', productRoute);
 
