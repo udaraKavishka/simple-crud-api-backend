@@ -14,9 +14,9 @@ router.get('/:id',getProduct);
 
 //router.put('/:id', deleteProduct)
 
-router.post("/", verifyToken, upload.array('files',10),Product,postProduct);
+router.post("/", verifyToken, Product,postProduct);
 
-router.put("/:id", verifyToken, upload.array('files',10),Product,updateProduct);
+router.put("/:id", verifyToken, Product,updateProduct);
 
 router.delete("/:id",verifyToken,deleteProduct);
 
